@@ -13,7 +13,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonOne, buttonTwo,buttonThree;
     TextView texto;
 
-
+    private void setText(String text){
+        texto.setText(text);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonTwo=(Button)findViewById(R.id.button2);
         buttonThree=(Button)findViewById(R.id.button3);
         texto=(TextView) findViewById(R.id.text1);
+
+        texto.setText("hola");
         buttonOne.setOnClickListener(new View.OnClickListener() {
 
 
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Log.v(TAG,"SOY EL BOTON 1");
+                setText("SOY EL BOTTON 1");
             }
         });
 
@@ -43,12 +48,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch ((v.getId())){
             case R.id.button1:
                 Log.v(TAG,"SOY EL BOTON 1 EN THIS");
+                setText("SOY EL BOTON 1 ");
                 break;
             case R.id.button2:
                 Log.v(TAG,"SOY EL BOTON 2 EN THIS");
+                setText("SOY EL BOTON 2 ");
                 break;
             case R.id.button3:
                 Log.v(TAG,"SOY EL BOTON 3 EN THIS");
+                setText("SOY EL BOTON 4 ");
                 break;
 
         }
